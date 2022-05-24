@@ -11,12 +11,13 @@ namespace imo.api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CidadesController : ControllerBase
+    public class CidadeController : ControllerBase
     {
-        
+        private IEnumerable<Cidade> _cidade;
+
         private readonly DataContext context;
 
-        public CidadesController(DataContext context)
+        public CidadeController(DataContext context)
         {
             this.context = context;
         }
@@ -26,6 +27,8 @@ namespace imo.api.Controllers
         {
             return this.context.Cidades;
         }
+
+
         [HttpGet("{id}")]
         public Cidade GetById(int id)
         {
@@ -38,16 +41,18 @@ namespace imo.api.Controllers
             return "CidadesController Post";
         }
 
-        [HttpPut("id")]
+
+
+        [HttpPut("{id}")]
         public string Put(int id)
         {
-            return "CidadesController Put";
+            return $"Exemplo de Put com id = {id}";
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public string Delete(int id)
         {
-            return "CidadesController Delete";
+            return $"Exemplo de Delete com id = {id}";
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace imo.api.Data.Migrations
 {
-    public partial class second : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,9 @@ namespace imo.api.Data.Migrations
                     CidadeId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     CidadeLocal = table.Column<string>(type: "TEXT", nullable: true),
-                    Estado = table.Column<string>(type: "TEXT", nullable: true)
+                    Estado = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemURL = table.Column<string>(type: "TEXT", nullable: true),
+                    QtaImoveis = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

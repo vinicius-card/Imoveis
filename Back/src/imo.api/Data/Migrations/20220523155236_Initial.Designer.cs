@@ -8,14 +8,14 @@ using imo.api.Data;
 namespace imo.api.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220509141635_second")]
-    partial class second
+    [Migration("20220523155236_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("ProductVersion", "5.0.2");
 
             modelBuilder.Entity("imo.api.Models.Cidade", b =>
                 {
@@ -28,6 +28,12 @@ namespace imo.api.Data.Migrations
 
                     b.Property<string>("Estado")
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemURL")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("QtaImoveis")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("CidadeId");
 
